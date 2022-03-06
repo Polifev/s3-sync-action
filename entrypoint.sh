@@ -38,7 +38,7 @@ text
 EOF
 
 if ! [ -z "$AWS_SESSION_TOKEN" ]; then
-  echo $AWS_SESSION_TOKEN >> ~/.aws/credentials
+  echo "aws_session_token=$AWS_SESSION_TOKEN" >> ~/.aws/credentials
 fi
 
 # Sync using our dedicated profile and suppress verbose messages.
