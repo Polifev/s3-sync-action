@@ -37,7 +37,9 @@ ${AWS_REGION}
 text
 EOF
 
-cat ~/.aws/credentials
+if ! [ -z "$AWS_SESSION_TOKEN" ]; then
+  echo $AWS_SESSION_TOKEN >> ~/.aws/credentials
+fi
 
 # Sync using our dedicated profile and suppress verbose messages.
 # All other flags are optional via the `args:` directive.
